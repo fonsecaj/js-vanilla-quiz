@@ -1,0 +1,23 @@
+:root {
+  --font-family: "Inter";
+  --font-feature-settings: "ss08" on, "ss02" on, "liga" off;
+  --font-variation-settings: normal;
+  --mono-font-family: "JetBrains Mono";
+  --mono-font-feature-settings: normal;
+  --mono-font-variation-settings: normal;
+  --white: #fff;
+  --black: #000;
+  --grey-50: #e6e6e6;
+  --grey-100: #cdcece;
+  --grey-200: #9c9c9d;
+  --grey-300: #6a6b6c;
+  --grey-400: #434345;
+  --grey-500: #2f3031;
+  --grey-600: #1b1c1e;
+  --grey-700: #111214;
+  --grey-800: #0c0d0f;
+  --grey-900: #07080a;
+  --background: var(--grey-900) --background-dotted: radial-gradient(var(--grey-500) .5px, transparent 0) -8.5px -8.5px / 17px 17px;
+  --foreground: var(--white);
+  --text-shadow: 0 4px 4px rgba(0, 0, 0, .15);
+}
