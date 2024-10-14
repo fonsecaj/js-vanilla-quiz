@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "question": "Is it true ?",
+    "answers": [
+      {
+        "id": 1,
+        "content": "Yes"
+      },
+      {
+        "id": 2,
+        "content": "No"
+      },
+      {
+        "id": 3,
+        "content": "Maybe"
+      },
+      {
+        "id": 4,
+        "content": "Probably"
+      }
+    ],
+    "validAnswerId": 4
+  },
+  {
+    "id": 2,
+    "question": "Is it false ?",
+    "answers": [
+      {
+        "id": 1,
+        "content": "Yes"
+      },
+      {
+        "id": 2,
+        "content": "No"
+      },
+      {
+        "id": 3,
+        "content": "Maybe"
+      },
+      {
+        "id": 4,
+        "content": "Probably"
+      }
+    ],
+    "validAnswerId": 3
+  }
+]

@@ -17,7 +17,8 @@
   --grey-700: #111214;
   --grey-800: #0c0d0f;
   --grey-900: #07080a;
-  --background: var(--grey-900) --background-dotted: radial-gradient(var(--grey-500) .5px, transparent 0) -8.5px -8.5px / 17px 17px;
+  --background: var(--grey-900);
+  --background-dotted: radial-gradient(var(--grey-500) .5px, transparent 0) -8.5px -8.5px / 17px 17px;
   --foreground: var(--white);
   --text-shadow: 0 4px 4px rgba(0, 0, 0, .15);
 }

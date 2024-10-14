@@ -12,10 +12,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/tokens.css">
-    <link rel="stylesheet" href="styles/preflight.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet"> -->
 </head>
 <body>
     <header>
@@ -23,26 +20,9 @@
       <span>TriviaScript</span>
     </header>
 
-    <main>
-      <div id="hero" class="hero">
-        <h1>It's time for a JavaScript quiz.</h1>
-        <p>
-          No framework, tooling or library, just a simple quiz application built with plain JavaScript <i>classes</i>. Have fun.
-        </p>
-
-        <button id="start-btn" aria-disabled="false" type="button">Start</button>
-      </div>
-  
-      <!-- <div id="quiz-container">
-          <h1>Interactive Quiz</h1>
-          <h2 id="question"></h2>
-          <div id="answers"></div>
-          <p id="result"></p>
-      </div> -->
-  
-    </main>
+    <main id="app"></main>
 
     <div class="gradient"></div>
-    <script src="index.js"></script>
+    <script type="module" src="/main.js"></script>
 </body>
 </html>
