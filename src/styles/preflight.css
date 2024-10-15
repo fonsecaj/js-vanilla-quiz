@@ -26,16 +26,24 @@ html,
   font-feature-settings: var(--font-feature-settings, normal);
   font-variation-settings: var(--font-variation-settings, normal);
   -webkit-tap-highlight-color: transparent;
+  background: var(--color-background);
 }
 
 body {
+  background: var(--gradient-dotted);
   line-height: inherit;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
 }
 
 body,
 html {
   padding: 0;
   margin: 0;
+  color-scheme: dark;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 hr {
@@ -54,9 +62,11 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   font-size: inherit;
   font-weight: inherit;
+  color: var(--color-on-background);
 }
 
 a {
@@ -85,6 +95,7 @@ pre {
       monospace);
   font-feature-settings: var(--mono-font-feature-settings, normal);
   font-variation-settings: var(--mono-font-variation-settings, normal);
+  font-variant-ligatures: no-contextual;
   font-size: 1em;
 }
 

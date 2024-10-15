@@ -1,48 +1,243 @@
 [
   {
     "id": 1,
-    "question": "Is it true ?",
+    "title": "What is the correct way to declare a variable in JavaScript that can be reassigned?",
     "answers": [
       {
-        "id": 1,
-        "content": "Yes"
+        "value": 1,
+        "label": "<code>var x = 5;</code>"
       },
       {
-        "id": 2,
-        "content": "No"
+        "value": 2,
+        "label": "<code>let x = 5;</code>"
       },
       {
-        "id": 3,
-        "content": "Maybe"
+        "value": 3,
+        "label": "<code>const x = 5;</code>"
       },
       {
-        "id": 4,
-        "content": "Probably"
+        "value": 4,
+        "label": "<code>int x = 5;</code>"
       }
     ],
-    "validAnswerId": 4
+    "answerValue": 2,
+    "explanation": "The correct way to declare a variable that can be reassigned is using <code>let</code>. <code>var</code> is outdated, <code>const</code> is for constants, and <code>int</code> is not used in JavaScript."
   },
   {
     "id": 2,
-    "question": "Is it false ?",
+    "title": "Which of the following is NOT a valid way to create an <code>object</code> in JavaScript?",
     "answers": [
       {
-        "id": 1,
-        "content": "Yes"
+        "value": 1,
+        "label": "<code>let obj = {};</code>"
       },
       {
-        "id": 2,
-        "content": "No"
+        "value": 2,
+        "label": "<code>let obj = new Object();</code>"
       },
       {
-        "id": 3,
-        "content": "Maybe"
+        "value": 3,
+        "label": "<code>let obj = Object.create(null);</code>"
       },
       {
-        "id": 4,
-        "content": "Probably"
+        "value": 4,
+        "label": "<code>let obj = Object.make();</code>"
       }
     ],
-    "validAnswerId": 3
+    "answerValue": 4,
+    "explanation": "<code>Object.make()</code> is not a valid method in JavaScript. The other three options are all valid ways to create objects."
+  },
+  {
+    "id": 3,
+    "title": "What does the <code>===</code> operator do in JavaScript?",
+    "answers": [
+      {
+        "value": 1,
+        "label": "Checks for equality, allowing type coercion"
+      },
+      {
+        "value": 2,
+        "label": "Checks for equality without type coercion"
+      },
+      {
+        "value": 3,
+        "label": "Assigns a value to a variable"
+      },
+      {
+        "value": 4,
+        "label": "Compares object references"
+      }
+    ],
+    "answerValue": 2,
+    "explanation": "The <code>===</code> operator checks for strict equality without type coercion, comparing both value and type."
+  },
+  {
+    "id": 4,
+    "title": "What is the purpose of the <code>use strict</code> directive in JavaScript?",
+    "answers": [
+      {
+        "value": 1,
+        "label": "To enable new ECMAScript features"
+      },
+      {
+        "value": 2,
+        "label": "To make the code run faster"
+      },
+      {
+        "value": 3,
+        "label": "To enforce stricter parsing and error handling"
+      },
+      {
+        "value": 4,
+        "label": "To disable certain JavaScript features"
+      }
+    ],
+    "answerValue": 3,
+    "explanation": "<code>use strict</code> enforces stricter parsing and error handling in JavaScript, helping to catch common coding errors and prevent the use of certain error-prone features."
+  },
+  {
+    "id": 5,
+    "title": "Which method is used to add one or more elements to the end of an array?",
+    "answers": [
+      {
+        "value": 1,
+        "label": "<code>Array.push()</code>"
+      },
+      {
+        "value": 2,
+        "label": "<code>Array.pop()</code>"
+      },
+      {
+        "value": 3,
+        "label": "<code>Array.shift()</code>"
+      },
+      {
+        "value": 4,
+        "label": "<code>Array.unshift()</code>"
+      }
+    ],
+    "answerValue": 1,
+    "explanation": "The <code>Array.push()</code> method is used to add one or more elements to the end of an array."
+  },
+  {
+    "id": 6,
+    "title": "What is the output of <code>console.log(typeof NaN)</code>?",
+    "answers": [
+      {
+        "value": 1,
+        "label": "<code>'number'</code>"
+      },
+      {
+        "value": 2,
+        "label": "<code>'NaN'</code>"
+      },
+      {
+        "value": 3,
+        "label": "<code>'undefined'</code>"
+      },
+      {
+        "value": 4,
+        "label": "<code>'object'</code>"
+      }
+    ],
+    "answerValue": 1,
+    "explanation": "<code>typeof NaN</code> returns <code>'number'</code> because <code>NaN</code> (Not-a-Number) is considered a numeric data type in JavaScript, despite its name."
+  },
+  {
+    "id": 7,
+    "title": "Which of the following is a valid way to define an arrow function?",
+    "answers": [
+      {
+        "value": 1,
+        "label": "<code>function() => {}</code>"
+      },
+      {
+        "value": 2,
+        "label": "<code>() -> {}</code>"
+      },
+      {
+        "value": 3,
+        "label": "<code>() => {}</code>"
+      },
+      {
+        "value": 4,
+        "label": "<code>=> () {}</code>"
+      }
+    ],
+    "answerValue": 3,
+    "explanation": "The correct syntax for an arrow function is <code>() => {}</code>. The parentheses can be omitted for single parameters, and the curly braces can be omitted for single expressions."
+  },
+  {
+    "id": 8,
+    "title": "What is the purpose of the <code>this</code> keyword in JavaScript?",
+    "answers": [
+      {
+        "value": 1,
+        "label": "To refer to the current function"
+      },
+      {
+        "value": 2,
+        "label": "To refer to the parent object"
+      },
+      {
+        "value": 3,
+        "label": "To refer to the current object"
+      },
+      {
+        "value": 4,
+        "label": "To create a new object"
+      }
+    ],
+    "answerValue": 3,
+    "explanation": "The <code>this</code> keyword in JavaScript refers to the current object or context in which the code is executing. Its value depends on how a function is called."
+  },
+  {
+    "id": 9,
+    "title": "Which method is used to remove the last element from an array?",
+    "answers": [
+      {
+        "value": 1,
+        "label": "<code>Array.split()</code>"
+      },
+      {
+        "value": 2,
+        "label": "<code>Array.pop()</code>"
+      },
+      {
+        "value": 3,
+        "label": "<code>Array.shift()</code>"
+      },
+      {
+        "value": 4,
+        "label": "<code>Array.unshift()</code>"
+      }
+    ],
+    "answerValue": 2,
+    "explanation": "The <code>pop()</code> method is used to remove the last element from an array and return that element."
+  },
+  {
+    "id": 10,
+    "title": "What is the output of <code>console.log(1 + 2 + '2' + 1)</code> ?",
+    "answers": [
+      {
+        "value": 1,
+        "label": "<code>'321'</code>"
+      },
+      {
+        "value": 2,
+        "label": "<code>NaN</code>"
+      },
+      {
+        "value": 3,
+        "label": "<code>'5'</code>"
+      },
+      {
+        "value": 4,
+        "label": "<code>'1221'</code>"
+      }
+    ],
+    "answerValue": 1,
+    "explanation": "The output will be <code>'321'</code> because the addition operation is performed left to right, and when a string is encountered, the following values are concatenated as strings."
   }
 ]
+        

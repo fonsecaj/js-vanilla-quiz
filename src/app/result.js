@@ -8,17 +8,32 @@ export class Result {
   }
 
   #handleRetryButton() {
-    const btn = document.getElementById('retry-btn');
-
-    btn.addEventListener('click', () => this.retry.emit());
+    this.parentElement
+      .querySelector('#retry-btn')
+      .addEventListener('click', () => this.retry.emit());
   }
 
   render() {
     this.parentElement.innerHTML = `
-      <div id="result" class="app-result">
-        <p>Result: ${this.store.state.score}</p>
+      <div class="score-container">
+        <div class="animated-badge">
+          <p class="ty-body">
+            Score
+          </p>
+        </div>
 
-        <button id="retry-btn" aria-disabled="false" type="button">Retry</button>
+        <p class="ty-display">
+          ${this.store.score}
+        </p>
+
+        <button
+          id="retry-btn"
+          class="translucid-btn"
+          type="button"
+          aria-disabled="false"
+        >
+          Retry
+        </button>
       </div>
     `;
 

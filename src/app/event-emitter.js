@@ -5,7 +5,7 @@ export class EventEmitter {
     this.#subscribers.push(observer);
   }
 
-  emit() {
-    this.#subscribers.forEach(observer => observer(this._value));
+  emit(value) {
+    this.#subscribers.forEach(observer => observer(value));
   }
 }

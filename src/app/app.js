@@ -1,3 +1,5 @@
+'use strict;'
+
 import { Game } from "./game";
 import { Home } from "./home"
 import { Result } from "./result"
@@ -11,30 +13,12 @@ export class App {
   #result = new Result(this.#element, this.#store);
 
   constructor() {
-    this.#home.start.subscribe(() => this.#renderGame());
-    this.#game.finish.subscribe(() => this.#renderResult());
-    this.#result.retry.subscribe(() => {
-      this.#renderGame()
-    });
-  }
-
-  #renderHome() {
-    this.#home.render();
-  }
-
-  #renderGame() {
-    this.#element.classList.add('app-blur');
-    setTimeout(() => {
-      this.#game.render();
-      this.#element.classList.remove('app-blur');
-    }, 150);
-  }
-
-  #renderResult() {
-    this.#result.render();
+    this.#home.start.subscribe(() => this.#game.render(true));
+    this.#game.finish.subscribe(() => this.#result.render());
+    this.#result.retry.subscribe(() => this.#game.render(true));
   }
 
   render() {
-    this.#renderHome();
+    this.#home.render();
   }
 }
