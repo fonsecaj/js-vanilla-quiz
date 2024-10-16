@@ -1,6 +1,6 @@
 import { EventEmitter } from "./event-emitter";
 
-export class Result {
+export class ScorePage {
   constructor(parentElement, store) {
     this.retry = new EventEmitter();
     this.parentElement = parentElement;
@@ -28,7 +28,7 @@ export class Result {
 
         <button
           id="retry-btn"
-          class="translucid-btn"
+          class="dark-btn"
           type="button"
           aria-disabled="false"
         >

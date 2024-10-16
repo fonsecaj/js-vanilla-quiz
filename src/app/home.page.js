@@ -1,6 +1,6 @@
 import { EventEmitter } from "./event-emitter";
 
-export class Home {  
+export class HomePage {  
   constructor(parentElement) {
     this.start = new EventEmitter();
     this.parentElement = parentElement;
@@ -26,7 +26,7 @@ export class Home {
         <button
           aria-disabled="false"
           type="button"
-          class="translucid-btn"
+          class="dark-btn"
         >
           Start
         </button>

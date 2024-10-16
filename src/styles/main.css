@@ -40,10 +40,12 @@ main {
 
 main[data-transition='true'] {
   filter: blur(64px) opacity(0.5);
+  transform: scale(0.7);
 }
 
 main[data-transition='false'] {
   filter: blur(0) opacity(1);
+  transform: scale(1);
 }
 
 /* Home view */
@@ -118,7 +120,7 @@ main[data-transition='false'] {
 
 /* Buttons and inputs */
 
-.translucid-btn {
+.dark-btn {
   color: var(--color-on-surface);
   outline: 1px solid var(--color-surface-bright);
   background: var(--gradient-surface-high);

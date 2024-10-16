@@ -1,24 +1,24 @@
 'use strict;'
 
-import { Game } from "./game";
-import { Home } from "./home"
-import { Result } from "./result"
+import { QuizPage } from "./quiz.page";
+import { HomePage } from "./home.page"
+import { ScorePage } from "./score.page"
 import { Store } from "./store";
 
 export class App {
   #element = document.getElementById('app');
   #store = new Store();
-  #game = new Game(this.#element, this.#store);
-  #home = new Home(this.#element, this.#store);
-  #result = new Result(this.#element, this.#store);
+  #quizPage = new QuizPage(this.#element, this.#store);
+  #homePage = new HomePage(this.#element, this.#store);
+  #scorePage = new ScorePage(this.#element, this.#store);
 
   constructor() {
-    this.#home.start.subscribe(() => this.#game.render(true));
-    this.#game.finish.subscribe(() => this.#result.render());
-    this.#result.retry.subscribe(() => this.#game.render(true));
+    this.#homePage.start.subscribe(() => this.#quizPage.render(true));
+    this.#quizPage.finish.subscribe(() => this.#scorePage.render());
+    this.#scorePage.retry.subscribe(() => this.#quizPage.render(true));
   }
 
   render() {
-    this.#home.render();
+    this.#homePage.render();
   }
 }

@@ -1,6 +1,6 @@
 import { EventEmitter } from './event-emitter';
 
-export class Game {
+export class QuizPage {
   #timerId;
 
   constructor(parentElement, store) {
@@ -10,25 +10,25 @@ export class Game {
   }
 
   #handleAnswersSelection() {
-    const answers = document.getElementsByName(`question-${this.store.currentQuestionIndex}`);
+    this.parentElement
+      .querySelectorAll('input[type="radio"]')
+      .forEach(answer => {
+        answer.addEventListener('input', () => {
+          const selectedAnswerValue = parseInt(answer.value);
 
-    answers.forEach(answer => {
-      answer.addEventListener('input', () => {
-        const selectedAnswerValue = parseInt(answer.value);
+          this.store.patchState({
+            selectedAnswerValue,
+            score: selectedAnswerValue === this.store.currentQuestionAnswerValue ? this.store.score + 1 : this.store.score,
+          });
 
-        this.store.patchState({
-          selectedAnswerValue,
-          score: selectedAnswerValue === this.store.currentQuestionAnswerValue ? this.store.score + 1 : this.store.score,
-        });
-
-        this.#stopTimer();
-        this.render();
-      })
-    });
+          this.#stopTimer();
+          this.render();
+        })
+      });
   }
 
   #handleNextQuestionNavigation() {
-    const nextButton = document.getElementById('next-btn');
+    const nextButton = this.parentElement.querySelector('#next-btn');
 
     if (!nextButton) return;
 
@@ -40,6 +40,7 @@ export class Game {
           selectedAnswerValue: null,
           isTimeElapsed: false,
         });
+
         this.render(true);
       } else {
         this.store.patchState({
@@ -47,7 +48,8 @@ export class Game {
           selectedAnswerValue: null,
           isTimeElapsed: false,
         });
-        this.finish.emit();
+
+        this.#callWithTransition(() => this.finish.emit());
       }
     });
   }
@@ -116,6 +118,14 @@ export class Game {
     `;
   }
 
+  #callWithTransition(fn) {
+    this.parentElement.setAttribute('data-transition', 'true');
+    setTimeout(() => {
+      fn();
+      this.parentElement.setAttribute('data-transition', 'false');
+    }, 200);
+  }
+
   #renderGame() {
     this.parentElement.innerHTML = `
       <div class="quiz-container">
@@ -139,17 +149,9 @@ export class Game {
 
   render(shouldAnimate) {
     if (shouldAnimate) {
-      const transitionAttribute = 'data-transition';
-      this.parentElement.setAttribute(transitionAttribute, 'true');
-
-      setTimeout(() => {
-        this.#renderGame();
-        this.parentElement.setAttribute(transitionAttribute, 'false');
-      }, 200);
-
-      return;
+      this.#callWithTransition(() => this.#renderGame());
+    } else {
+      this.#renderGame();
     }
-
-    this.#renderGame();
   }
 }

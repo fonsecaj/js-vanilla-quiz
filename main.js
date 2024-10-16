@@ -1,4 +1,4 @@
-import './src/styles/tokens.css';
+import './src/styles/theme.css';
 import './src/styles/preflight.css';
 import './src/styles/main.css';
 
